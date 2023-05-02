@@ -30,6 +30,8 @@ def count_seat(graph: list, x: int, y: int, dir: int) -> int:
     nx, ny = x + dx, y + dy
 
     while 0 <= nx < row and 0 <= ny < col:
+        if graph[nx][ny] == 9:
+            break
         if graph[nx][ny] != 0:
             dir = change_dir(dir, graph[nx][ny])
             if dir == -1:
